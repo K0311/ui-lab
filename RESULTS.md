@@ -2,9 +2,6 @@
 
 Tool parts that I chose: Part 2, Selenium WebDriver in Java, and Part 3, Robot Framework
 
-> Lines marked **TODO** need a value from your own computer or your own run.
-> Fill them in, then delete this note.
-
 ## Part 0
 - Step 0.1, Chrome version: Google Chrome 158.0.8127.37 (Official Build) (64-bit), Windows 10 x64
 - Step 0.3, ChromeDriver version: ChromeDriver 158.0.8127.36 (14d6f648e8cd7ad750a4044200ce94d3321be260-refs/branch-heads/8127@{#1691}). Chrome for Testing had no build for 158.0.8127.37, and ChromeDriver only needs the same major version, 158
@@ -12,17 +9,19 @@ Tool parts that I chose: Part 2, Selenium WebDriver in Java, and Part 3, Robot F
 - Step 0.4, locator of Excluded tools: `select`, the only select element on the page, as XPath `//select[option[normalize-space()='Knife']]`, 1 match
 - Step 0.4, locator of Must be vegetarian: `#default-checkbox`, 1 match
 - Step 0.4, locator of Custom Pizza Name: `input#pizza-name`, 1 match. `#pizza-name` alone finds 2 elements after Pizza, Please!, because the heading of the answer has the same id
-- Step 0.5, pizza name, tool and calories of the run by hand: **TODO** (for example Lab Pizza 20261122-160000, tool ..., ... calories per slice)
+- Step 0.5, pizza name, tool and calories of the run by hand: Lab Pizza 20261122-163810, tool Scissors, 475 calories per slice (22 Nov 2026, 16:38, Chromium browser of the Claude desktop app, not logged in at the start)
 
 | Step | Actual result | Pass or fail |
 |------|---------------|--------------|
-| 1    | **TODO** The heading reads Looking to break out of your pizza routine? | **TODO** |
-| 2    | **TODO** Max Calories per Slice (showing 1000), Excluded tools, Must be vegetarian and Custom Pizza Name appear | **TODO** |
-| 3    | **TODO** The fields show 600, Knife, vegetarian ticked and the pizza name | **TODO** |
-| 4    | **TODO** The answer shows Name: (pizza name), Tool: (tool), Calories per slice: (number) | **TODO** |
-| 5    | **TODO** The page says Please log in first. | **TODO** |
-| 6    | **TODO** After Sign in with admin and admin, the page shows Latest pizza recommendations | **TODO** |
-| 7    | **TODO** The line with the pizza name shows (tool=...) with the same tool as in step 4 | **TODO** |
+| 1    | The heading reads Looking to break out of your pizza routine? The page shows Login, so the browser is not logged in | Pass |
+| 2    | Max Calories per Slice (showing 1000), Excluded tools (Knife, Pizza cutter, Scissors), Must be vegetarian and Custom Pizza Name appear | Pass |
+| 3    | The fields show 600, Knife, vegetarian ticked and Lab Pizza 20261122-163810 | Pass |
+| 4    | The answer shows Name: Lab Pizza 20261122-163810, Dough: Stuffed, seven vegetarian ingredients, Tool: Scissors, Calories per slice: 475 | Pass |
+| 5    | Love it! shows Please log in first. | Pass |
+| 6    | After Sign in with admin and admin, the page shows Latest pizza recommendations | Pass |
+| 7    | The list holds 15 lines, all named Stress Pizza (another user was creating pizzas quickly), and none of them is Lab Pizza 20261122-163810. The admin list shows only the 15 newest pizzas, so ours had already dropped out | Fail |
+
+Step 7 failed because of the shared site, not because the pizza was lost: the admin page loads the 15 newest recommendations once after sign-in. The same thing made the automated Robot run 1 fail at step 7 at 16:22. It shows that step 7 of QP-01 depends on how busy QuickPizza is.
 
 ## Part 2: Selenium WebDriver in Java
 - Step 2.4, the failure line for the wrong title: **TODO** (expected: `[ERROR]   FirstTest.webFormOpens:20 expected: <Web Form> but was: <Web form>`)
@@ -35,7 +34,7 @@ Tool parts that I chose: Part 2, Selenium WebDriver in Java, and Part 3, Robot F
 ## Part 3: Robot Framework
 - robot --version: Robot Framework 7.5.1 (Python 3.10.10 on win32)
 - Step 3.2, failure message for the wrong title: Title should have been 'Web Form' but was 'Web form'. **TODO** confirm in your run
-- Step 3.8, run 1, result, elapsed time and pizza name: PASS, **TODO** s, Lab Pizza **TODO** (from results/run1/report.html, run at 16:34)
+- Step 3.8, run 1, result, elapsed time and pizza name: PASS, 9.72 s, Lab Pizza **TODO** (run at 16:34, name in results/run1/log.html under Set Variable)
 - Note: two earlier attempts at run 1 failed, and I kept their details here. At 16:22, Lab Pizza 20261122-162244 failed at step 7 after 19.7 s with `Text 'Lab Pizza 20261122-162244' did not appear in 10 seconds.` At 16:30, Lab Pizza 20261122-163017 failed at step 4 after 16.9 s with `Element with locator 'id:recommendations' not found.` The same suite passed right before and after (for example Lab Pizza 20261122-162306, PASS, 10.5 s)
 - Step 3.8, run 2, result, elapsed time and pizza name: PASS, 9.67 s, Lab Pizza 20261122-163036
 
