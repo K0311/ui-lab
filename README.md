@@ -43,5 +43,6 @@ Surefire report into `selenium-java/reports`, and prints the times, test counts 
 to copy into RESULTS.md.
 
 ```
-./run-evidence.sh
+./run-evidence.sh                                          # macOS or Linux
+powershell -ExecutionPolicy Bypass -File .\run-evidence.ps1  # Windows
 ```
