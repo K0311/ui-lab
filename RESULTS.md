@@ -9,7 +9,7 @@ Tool parts that I chose: Part 2, Selenium WebDriver in Java, and Part 3, Robot F
 - Step 0.4, locator of Excluded tools: `select`, the only select element on the page, as XPath `//select[option[normalize-space()='Knife']]`, 1 match
 - Step 0.4, locator of Must be vegetarian: `#default-checkbox`, 1 match
 - Step 0.4, locator of Custom Pizza Name: `input#pizza-name`, 1 match. `#pizza-name` alone finds 2 elements after Pizza, Please!, because the heading of the answer has the same id
-- Step 0.5, pizza name, tool and calories of the run by hand: Lab Pizza 20261122-163810, tool Scissors, 475 calories per slice (22 Nov 2026, 16:38, Chromium browser of the Claude desktop app, not logged in at the start)
+- Step 0.5, pizza name, tool and calories of the run by hand: Lab Pizza 20261122-163810, tool Scissors, 475 calories per slice 
 
 | Step | Actual result | Pass or fail |
 |------|---------------|--------------|
