@@ -35,7 +35,7 @@ Step 7 failed because of the shared site, not because the pizza was lost: the ad
 - robot --version: Robot Framework 7.5.1 (Python 3.10.10 on win32)
 - Step 3.2, failure message for the wrong title: `Title should have been 'Web Form' but was 'Web form'.` After I changed the title back, the test passed again
 - Step 3.8, run 1, result, elapsed time and pizza name: PASS, 9.72 s, Lab Pizza 20261122-163425
-- Note: two earlier attempts at run 1 failed, and I kept their details here. At 16:22, Lab Pizza 20261122-162244 failed at step 7 after 19.7 s with `Text 'Lab Pizza 20261122-162244' did not appear in 10 seconds.` At 16:30, Lab Pizza 20261122-163017 failed at step 4 after 16.9 s with `Element with locator 'id:recommendations' not found.` The same suite passed right before and after (for example Lab Pizza 20261122-162306, PASS, 10.5 s)
+- Note: two earlier attempts at run 1 failed, and I kept their details here. At 16:22, Lab Pizza 20261122-162244 failed at step 7 after 19.7 s with `Text 'Lab Pizza 20261122-162244' did not appear in 10 seconds.` At 16:30, Lab Pizza 20261122-163017 failed at step 4 after 16.9 s with `Element with locator 'id:recommendations' not found.` The same suite passed right before and after (for example Lab Pizza 20261122-162306, PASS, 10.5 s). `results/run1/selenium-screenshot-1.png` and `selenium-screenshot-2.png` are the pictures that SeleniumLibrary took when those two attempts failed. The second one shows the filled-in form of Lab Pizza 20261122-163017 with no answer below Pizza, Please!. The log, report and four qp01 pictures in `results/run1` come from the run that passed
 - Step 3.8, run 2, result, elapsed time and pizza name: PASS, 9.67 s, Lab Pizza 20261122-163036
 
 ## Part B
