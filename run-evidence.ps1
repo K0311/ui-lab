@@ -13,7 +13,16 @@ if (-not $env:CHROMEDRIVER) {
 
 Write-Host "== Versions"
 & $env:CHROMEDRIVER --version
-java -version 2>&1 | Select-Object -First 1
+$javaLine = (cmd /c "java -version 2>&1") | Select-Object -First 1
+Write-Host $javaLine
+if ($javaLine -notmatch 'version "(2[1-9]|[3-9]\d)') {
+    Write-Error "Part 2 needs Java 21 or newer on PATH (Step 2.1). Set JAVA_HOME first."
+    exit 1
+}
+if (-not (Get-Command mvn -ErrorAction SilentlyContinue)) {
+    Write-Error "mvn is not on PATH (Step 2.1). Add the bin folder of Maven to Path first."
+    exit 1
+}
 mvn -v | Select-Object -First 1
 
 Write-Host "== Part 2, Step 2.20: two full runs"
